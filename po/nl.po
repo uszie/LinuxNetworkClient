@@ -1,0 +1,36 @@
+# translation of kmapdrive.po to Nederlands
+# This file is put in the public domain.
+# Usarin Heininga <usarin@heininga.nl>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kmapdrive\n"
+"Report-Msgid-Bugs-To: usarin@heininga.nl\n"
+"POT-Creation-Date: 2005-08-19 01:57+0200\n"
+"PO-Revision-Date: 2005-06-27 15:20+0200\n"
+"Last-Translator: Usarin Heininga <usarin@heininga.nl>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: src/test/session.c:250
+msgid "Local Network"
+msgstr "Lokaal Netwerk"
+
+#: src/netplugins/smb/smb.c:517
+msgid "Windows Network"
+msgstr "Windows Netwerk"
+
+#: src/netplugins/nfs/nfs.c:360
+msgid "Linux Network"
+msgstr "Linux Netwerk"
+
+#: src/netplugins/ncp/ncp.c:290
+msgid "Novell Network"
+msgstr "Novell Netwerk"
+
+#: src/netplugins/ssh/ssh.c:195
+msgid "Secure Shell Network"
+msgstr "Secure Shell Netwerk"

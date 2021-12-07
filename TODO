@@ -1,0 +1,51 @@
+- geen snelkoppelling als mount faalde
+- snelkoppellingen verwijderen als dienst verwijderd is
+- jiffies aanpassen
+- nautilus ziet directories gelocked
+- gtk+1 dialog hack
+- snelkoppellingen opslaan voor gebruik in volgende sessie
+- geen wachtwoorden wegschrijven == geen wachtwoorden in het geheugen houden
+- expired routines testen
+- gnome control center module bouwen
+- voledige omgevingsvariablen exporteren, waar mogelijk
+- gtk moet GTK_RC_FILES in omgeving hebben
+- KDE control center module verbeteren
+- ondersteuning voor NFS paswoorden
+- kernel 2.4 module afmaken
+- niemand mag directories aanmaken in de netwerk root
+DONE - geforceerd scannen/mounten nadat de service verlopen is, ookal is tie in gebruik ( onRemove -> unmounten, Free -> directory verwijderen )
+- encryptie voor paswoorden
+- nieuwe sessie starten ook al is tie niet geregistreed ( doormiddel van kijken welke gebruikers er actief zijn )
+- refresh functie voor terminal repareren
+DONE - console dialoog mag maximaal 1 keer gebruikt worden, ookal was het paswoord niet goed
+- zorgen dat applicaties zichzelf als "autonet aware" kunnen registreren
+IGNORE - wanneer mount/scan faalde, dan de volgende keer niet proberen te mounten/scannen, maar gelijk om een paswoord vragen
+DONE - zorgen dat het binnengaan van netwerk omgeving ook een timestamp heeft
+DONE - geen $print shares weergeven ( $print en $admin hoofdletter ongevoelig)
+- vervangen van raise(SIGTERM) door iets beters
+DONE - zorgen dat updateDaemonConfig de boel niet verknalt
+DONE - updateDaemonConfig moet restartTimerService aanroepen
+- kio_file processen willlen wel eens verdwijnen terwijl de daemon dan nog bezig is met het ophalen van omgevingsvariablen
+- het aanklikken van een shortcut geeft geen garantie dat de expiretime geupdate worden
+- wanneer root directory verandert, het oude pad unmounten ne het nieuwe pad mounten
+- verwijder de network root directory wanneer de daemon niet draait en wanneer de root directory verandert
+- tab toets werkt niet met gtk dialoog
+- de afsluit procedure werkt niet helemaal goed, met betreking tot het saven van shortcuts
+- sessie processen moeten chdir(gebruikers dir) uitvoeren
+- tussen changeToUser( 0 ) calls mogen geen bestanden worden aangemaakt
+- voor serviceTimer try_lock gebruiken zodat de routine gewoon doorgaat ookal is een service entry bezig met mounten of scannen
+
+
+NIEUWE LIJST
+- konqLoginAs script moet een time out krijgen ingeval dat konqueror is blijven hangen en niet meer reageert
+- errorRoutine en crashAction moeten de gebruikers omgeving krijgen
+- zorgen dat een voledig URL waarbij een gebruikers naam voor server en share nodig is werkt
+- error plugin kan niet de juiste headers vinden op elke distributie
+- alle /usr/share/apps strings vervangen door iets dat altijd werkt
+- getDisplayDevice en getXauthority verbeteren
+- error plugin: kdialog vervangen door iets snellers
+- passwords encrypted opslaan
+- als fam niet draait of geen verbinding toewijst crashed de boel
+- nfs plugin moet orginele SIGALRM handler terugzetten
+
+- shortcuts toevoegen timeout veranderen

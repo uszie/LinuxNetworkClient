@@ -1,0 +1,31 @@
+{
+global:
+	mnt_free_ctl;
+	mnt_free_entry;
+	mnt_free_mfile;
+	mnt_free_iter;
+	mnt_get_fstab_path;
+	mnt_get_library_version;
+	mnt_get_mtab_path;
+	mnt_iterate_entries;
+	mnt_entry_get_dir;
+	mnt_entry_get_freq;
+	mnt_entry_get_options;
+	mnt_entry_get_passno;
+	mnt_entry_get_spec;
+	mnt_entry_get_type;
+	mnt_mfile_add_entry;
+	mnt_mfile_get_name;
+	mnt_mfile_get_nents;
+	mnt_mfile_get_nerrs;
+	mnt_mfile_strerror;
+	mnt_new_entry;
+	mnt_new_mfile;
+	mnt_new_iter;
+	mnt_parse_mfile;
+	mnt_parse_spec;
+	mnt_parse_version_string;
+	mnt_reset_iter;
+local:
+	*;
+};

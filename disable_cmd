@@ -1,0 +1,1 @@
+./configure --disable-gnome-plugin --disable-gtk-plugin --disable-qt-plugin --disable-kde-plugin --disable-curses-plugin --disable-console-plugin --disable-smb-plugin --disable-nfs-plugin --disable-ncp-plugin --disable-shortcut-plugin --disable-crashmanager-plugin --disable-konqueror-plugin --disable-knetworkclientconfig

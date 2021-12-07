@@ -1,0 +1,57 @@
+[Desktop Entry]
+Type=Service
+Icon=/usr/share/apps/networkclient/mycomputer.png
+Actions=loginas;createshortcut;mapnetworkdrive;remotedesktopconnection;
+X-KDE-Submenu=Network Actions
+X-KDE-Priority=TopLevel
+
+[Desktop Action createshortcut]
+Name=Create shortcut
+Name[nl]=Maak snelkoppeling aan
+Icon=/usr/share/apps/networkclient/network.png
+Exec=bash -c "createnetworkshortcut `path_to_network_url %u`"
+
+[Desktop Action loginas]
+Name=Log in as
+Name[nl]=Inloggen als
+Icon=/usr/share/apps/networkclient/network.png
+Exec=konqLoginAs %U
+
+[Desktop Action mapnetworkdrive]
+Name=Map network drive
+Name[nl]=Koppel netwerk schijf
+Icon=/usr/share/apps/networkclient/network.png
+Exec=kdesu --ignorebutton -d -c "kmapdrive "`path_to_network_url %u`""
+
+[Desktop Action remotedesktopconnection]
+Name=Open Remote Desktop Connection to This Machine
+Name[bg]=�.�.�.зка �. о�.дале�.ен �.або�.но м�.�.�.о �. изб�.ани�. комп�.�.�.�.
+Name[ca]=Obre una connexió remota d'escriptori a aquesta màquina
+Name[cs]=Otev�.ít vzdálené p�.ipojení plochy k tomuto po�.íta�.i
+Name[da]=�.bn ekstern desktopforbindelse til denne maskine
+Name[de]=Verbindung zur Arbeitsfläche dieses Rechners herstellen
+Name[el]=�.ημιο�.�.γία Σ�.νδε�.η�. �.η�. �.�.ομακ�.�.�.μένη�. �.�.ι�.άνεια�. �.�.γα�.ία�. �.ε �.�.�.�. �.ο �.η�.άνη�
+Name[es]=Abrir conexión remota de escritorio a este sistema
+Name[et]=Kaugtöölaua ühenduse avamine sellesse arvutisse
+Name[eu]=Open Remote Desktop konexioa makina honetara
+Name[fi]=Avaa etätyöpöytäyhteys tähän koneeseen
+Name[fr]=Ouvrir une connexion distante au bureau de cette machine
+Name[he]=פת�. �.�.�.�.ר ש�.�.�.�. ע�.�.�.�. �.ר�.�.ק �.�.�.�.נ�. �.�.
+Name[hu]=Távoli munkaasztal nyitása itt
+Name[is]=Opna fjarlæga skjáborðtengingu til þessarar vélar
+Name[it]=Apri connessione a desktop remoto a questa macchina
+Name[lt]=Užmegzti nutolusio darbastalio prijungim�. prie šio kompiuterio
+Name[nb]=�.pne fjerntilkobling til skrivebord til denne maskinen
+Name[nl]=Externe bureaubladverbinding met deze computer openen
+Name[pl]=Otwórz zdalne po�.�.czenie z pulpitem na tej maszynie
+Name[pt]=Abrir Ligação Remota a Ecrã para Este Computador
+Name[pt_BR]=Abre Conexões Remotas para Essa Máquina
+Name[ru]=�.�.к�.�.�.�. �.оединение Remote Desktop �. �.�.ой ма�.иной
+Name[sl]=Odpri povezavo z oddaljenim namizjem na tem ra�.unalniku
+Name[sr]=�.�.во�.и �.да�.ен�. вез�. �.а �.адном пов�.�.ином на ово�. ма�.ини
+Name[sr@Latn]=Otvori udaljenu vezu sa radnom površinom na ovoj mašini
+Name[sv]=�.ppna fjärrskrivbordsanslutning till den här datorn
+Name[uk]=�.�.дк�.и�.и з'�.днанн�. з в�.ддалено�. �.�.�.л�.ни�.е�. до �.�.ого комп'�.�.е�.а
+Name[zh_CN]=�..��.�.�此计��.�.��..��.��.��.�.���.�.�
+Exec=konqRDC %u
+Icon=krdc

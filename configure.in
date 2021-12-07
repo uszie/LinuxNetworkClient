@@ -1,0 +1,93 @@
+#AC_INIT(acinclude.m4)
+AC_INIT(LinuxNetworkClient, 0.5, usarin@heininga.nl)
+RUN_TEST
+CONFIGURE_KDE4_PLUGIN
+AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE
+#(LinuxNetworkClient, 0.5)
+
+AC_LANG_CPLUSPLUS
+AC_PROG_CXX
+AM_PROG_LIBTOOL
+AM_GNU_GETTEXT([external])
+
+CPPFLAGS="$CPPFLAGS -D_FILE_OFFSET_BITS=64 -D_REENTRANT -D_GNU_SOURCE -DFUSE_USE_VERSION=22"
+#AC_CONFIG_SUBDIRS( src/knetworkclientconfig )
+#echo -e "\n\nRUNNING EXTENDED CONFIGURE\n\n"
+#_AC_OUTPUT_SUBDIRS
+#subdirs=""
+#echo -e "\n\nDONE RUNNING EXTENDED CONFIGURE\n\n"
+
+BUILD_LNC_LIBRARY
+CHECK_X_QT_KDE
+KDE_PREFIX
+ENABLE_LNCD
+ENABLE_GNOME_PLUGIN
+ENABLE_GTK_PLUGIN
+ENABLE_QT_PLUGIN
+ENABLE_KDE_PLUGIN
+ENABLE_CURSES_PLUGIN
+ENABLE_CONSOLE_PLUGIN
+ENABLE_SMB_PLUGIN
+ENABLE_NFS_PLUGIN
+ENABLE_NCP_PLUGIN
+ENABLE_SSH_PLUGIN
+ENABLE_FTP_PLUGIN
+ENABLE_HTTP_PLUGIN
+ENABLE_SHORTCUT_PLUGIN
+ENABLE_CRASHMANAGER_PLUGIN
+ENABLE_KONQUEROR_PLUGIN
+ENABLE_XEXT_PLUGIN
+ENABLE_KAUTONETCONFIG
+
+AC_DEFINE_UNQUOTED(LNC_PLUGIN_DIR, "${prefix}/lib/LNC", [Directory where plugins are installed])
+AC_DEFINE_UNQUOTED(LOCALE_DIR, "${prefix}/share/locale", [Directory where translations are installed])
+AC_DEFINE_UNQUOTED(APP_DATA_DIR, "${prefix}/share/apps/networkclient", [Directory where application data is installed])
+AC_DEFINE_UNQUOTED(PREFIX, "${prefix}", [Install prefix])
+
+AM_CONDITIONAL(AMM_ENABLE_GNOME, test x$enable_gnome_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_GTK, test x$enable_gtk_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_QT, test x$enable_qt_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_KDE, test x$enable_kde_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_CURSES, test x$enable_curses_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_CONSOLE, test x$enable_console_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_NFS, test x$enable_nfs_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_SMB, test x$enable_smb_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_NCP, test x$enable_ncp_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_SSH, test x$enable_ssh_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_FTP, test x$enable_ftp_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_HTTP, test x$enable_http_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_SHORTCUT, test x$enable_shortcut_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_CRASHMANAGER, test x$enable_crashmanager_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_KONQUEROR, test x$enable_konqueror_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_XEXT, test x$enable_Xextensions_plugin = xyes )
+AM_CONDITIONAL(AMM_ENABLE_KAUTONETCONFIG, test x$enable_knetworkclientconfig = xyes )
+
+AC_CONFIG_FILES([ Makefile  po/Makefile.in])
+AC_CONFIG_FILES([ src/Makefile ])
+AC_CONFIG_FILES([ src/libnetwork/Makefile ])
+AC_CONFIG_FILES([ src/test/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/GNOME/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/GTK/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/KDE/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/QT/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/curses/Makefile ])
+AC_CONFIG_FILES([ src/guiplugins/console/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/ncp/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/nfs/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/smb/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/ssh/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/ftp/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/http/Makefile ])
+AC_CONFIG_FILES([ src/netplugins/shortcut/Makefile ])
+AC_CONFIG_FILES([ src/globalplugins/Makefile ])
+AC_CONFIG_FILES([ src/globalplugins/konqext/Makefile ])
+AC_CONFIG_FILES([ src/globalplugins/crashmanager/Makefile ])
+AC_CONFIG_FILES([ src/globalplugins/Xext/Makefile ])
+AC_CONFIG_FILES([ src/libmount/Makefile ])
+
+AC_OUTPUT()
+
+AUTONET_SUMMARY

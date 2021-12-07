@@ -1,0 +1,12 @@
+#! /bin/sh
+
+mods=`dirname $0`
+directory=`dirname $mods`
+mod=`basename $mods`
+if test -n "$PYTHONPATH"; then
+   export PYTHONPATH=$directory:$PYTHONPATH
+else
+   export PYTHONPATH=$directory
+fi
+exec python -c "import $mod; $mod.main()" --modules $mods "$@"
+

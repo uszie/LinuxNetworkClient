@@ -1,0 +1,27 @@
+#!/bin/bash
+
+file=`find -name link.txt`
+output=`cat $file`
+echo -n "" > $file
+
+for i in $output
+do
+    result=`echo $i | grep 'no-undefined'`
+    if  [[ $result == "" ]]
+    then
+	echo -n "$i " >> $file
+    fi
+done
+
+file=`find -name relink.txt`
+output=`cat $file`
+echo -n "" > $file
+
+for i in $output
+do
+    result=`echo $i | grep 'no-undefined'`
+    if  [[ $result == "" ]]
+    then
+	echo -n "$i " >> $file
+    fi
+done

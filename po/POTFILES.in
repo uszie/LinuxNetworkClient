@@ -1,0 +1,8 @@
+# List of source files which contain translatable strings.
+src/test/daemon.c
+src/test/session.c
+src/test/fusefs.c
+src/netplugins/smb/smb.c
+src/netplugins/nfs/nfs.c
+src/netplugins/ncp/ncp.c
+src/netplugins/ssh/ssh.c

@@ -1,0 +1,91 @@
+#!/bin/bash
+
+#sleep 2
+command=""
+reload=""
+
+for i in `dcop | grep konqueror`
+do
+    for j in `dcop $i | grep konqueror-mainwindow#`
+    do
+	retval=`dcop $i $j isActiveWindow`
+	if [[ $retval == "true" ]]
+	then
+	    command="dcop $i $j openURL"
+	    break
+	fi
+    done
+    if [ "$command" ]
+    then
+	break
+    fi
+done
+
+if [ "$command" ]
+then
+    networkclient_login "$1"
+    $command "$1"
+    exit 0
+fi
+
+
+for i in `qdbus | grep dolphin`
+do
+    for j in `qdbus $i | grep Dolphin | awk -F "/" '{print $3}' | uniq`
+    do
+	retval=`qdbus $i /dolphin/$j Get com.trolltech.Qt.QWidget isActiveWindow`
+	if [[ $retval == "true" ]]
+	then
+	    command="qdbus $i /dolphin/$j org.kde.dolphin.MainWindow.changeUrl"
+	    reload="qdbus $i /dolphin/$j org.kde.KMainWindow.activateAction reload"
+	    break
+	fi
+    done
+    if [ "$command" ]
+    then
+	break
+    fi
+done
+
+if [ "$command" ]
+then
+    networkclient_login "$1"
+#    dcop $i KDirNotify-1 FilesAdded "$1"
+#    echo $?
+    $command "$1"
+    $reload
+    exit 0
+    # &&
+#&
+#    autonet_login "$1 FORCE_AUTHENTIFICATION" && $command "$1" &
+fi
+
+for i in `qdbus | grep konqueror`
+do
+    for j in `qdbus $i | grep MainWindow | awk -F "/" '{print $3}' | uniq`
+    do
+	retval=`qdbus $i /konqueror/$j Get com.trolltech.Qt.QWidget isActiveWindow`
+	if [[ $retval == "true" ]]
+	then
+	    command="qdbus $i /konqueror/$j org.kde.Konqueror.MainWindow.openUrl"
+	    reload="qdbus $i /konqueror/$j org.kde.Konqueror.MainWindow.reload" 
+	    break
+	fi
+    done
+    if [ "$command" ]
+    then
+	break
+    fi
+done
+
+if [ "$command" ]
+then
+    networkclient_login "$1"
+#    dcop $i KDirNotify-1 FilesAdded "$1"
+#    echo $?
+    $command "$1" false
+    $reload
+    # &&
+#&
+#    autonet_login "$1 FORCE_AUTHENTIFICATION" && $command "$1" &
+fi

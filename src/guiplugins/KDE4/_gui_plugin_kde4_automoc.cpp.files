@@ -1,0 +1,14 @@
+SOURCES:
+/home/usarin/Documents/Projects/LinuxNetworkClient/src/guiplugins/KDE4/kde4.cpp
+MOC_COMPILE_DEFINITIONS:
+_BSD_SOURCE
+MOC_DEFINITIONS:
+ -D_BSD_SOURCE
+MOC_INCLUDES:
+/home/usarin/Documents/Projects/LinuxNetworkClient/src/guiplugins/KDE4;/usr/include;/usr/include/QtXmlPatterns;/usr/include/QtWebKit;/usr/include/QtHelp;/usr/include/QtAssistant;/usr/include/QtDBus;/usr/include/QtTest;/usr/include/QtUiTools;/usr/include/QtScript;/usr/include/QtSvg;/usr/include/QtXml;/usr/include/QtSql;/usr/include/QtOpenGL;/usr/include/QtNetwork;/usr/include/QtDesigner;/usr/include/Qt3Support;/usr/include/QtGui;/usr/include/QtCore;/usr/include/Qt;/usr/share/qt4/mkspecs/default;/home/usarin/Documents/Projects/LinuxNetworkClient/src/guiplugins/KDE4/../../libnetwork;/home/usarin/Documents/Projects/LinuxNetworkClient/src/guiplugins/KDE4/../../..
+CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE:
+ON
+CMAKE_BINARY_DIR:
+/home/usarin/Documents/Projects/LinuxNetworkClient/src/guiplugins/KDE4
+CMAKE_SOURCE_DIR:
+/home/usarin/Documents/Projects/LinuxNetworkClient/src/guiplugins/KDE4

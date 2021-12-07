@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Service
+Icon=/usr/share/apps/networkclient/fileshare.png
+Actions=loginas;createshortcut;mapnetworkdrive;
+X-KDE-Submenu=Network Actions
+X-KDE-Priority=TopLevel
+
+[Desktop Action createshortcut]
+Name=Create shortcut
+Name[nl]=Maak snelkoppeling aan
+Icon=/usr/share/apps/networkclient/network.png
+Exec=bash -c "createnetworkshortcut `path_to_network_url %u`"
+
+[Desktop Action loginas]
+Name=Log in as
+Name[nl]=Inloggen als
+Icon=/usr/share/apps/networkclient/network.png
+Exec=konqLoginAs %U
+
+[Desktop Action mapnetworkdrive]
+Name=Map network drive
+Name[nl]=Koppel netwerk schijf
+Icon=/usr/share/apps/networkclient/network.png
+Exec=kdesu --ignorebutton -d -c "kmapdrive `path_to_network_url %u`"

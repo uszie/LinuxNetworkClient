@@ -1,0 +1,69 @@
+# -*-python-*-
+# vim: ts=4
+
+import handlerbase
+
+class DesignerHandler(handlerbase.HandlerBase):
+	def __init__(self):
+		self.name = "designer"
+
+	def requirements(self):
+		return ([], ["autodeps", "mocs"])
+	
+	def extensions(self):
+		return ['.ui']
+	
+	def source(self, program, base, ext):
+
+		rulef = program.mfile
+		
+		sourcedir = ''
+		if program.mfile.in_srcdir(base + ext):
+			sourcedir = rulef.source
+		else:
+			sourcedir = rulef.build
+	
+		rules = ["@echo 'creating %s.cpp'" % (rulef.build + base)]
+		ui_files = []
+		if rulef.is_defined("UNSERMAKE_UIFILES"):
+			ui_files = rulef.definition("UNSERMAKE_UIFILES")
+
+		if not base in ui_files:
+			if not program.mfile.get_opt("qtonly"):
+				rules.append("@echo '#include <kdialog.h>' > %s%s.cpp" % (rulef.build, base))
+				rules.append("@echo '#include <klocale.h>' >> %s%s.cpp" % (rulef.build, base))
+				canon_source = utilities.canon_name(base)
+				rules.append("@adir=`cd %s && pwd` ;\\" % sourcedir)
+				rules.append("$(UIC) -tr ${UIC_TR} -i %s.h $$adir/%s.ui > %s%s.cpp.temp ; ret=$$?; \\" % (base, base, rulef.build, base))
+				line = 'sed -e "s,${UIC_TR}( \"\" ),QString::null,g" %s%s.cpp.temp ' % (rulef.build, base)
+				line = line + '| sed -e "s,image\([0-9][0-9]*\)_data,img\\1_%s,g" ' % canon_source
+				line = line + '>> %s%s.cpp ;\\' % (rulef.build, base)
+				rules.append( line )
+				rules.append('rm -f %s%s.cpp.temp ;\\' % (rulef.build, base))
+			else:
+				rules.append( "@$(UIC) -i %s.h %s.ui > %s%s.cpp ; ret=$$? \\"
+							  % (base, sourcedir + base, rulef.build, base) )
+			rules.append( "if test \"$$ret\" = 0; then echo '#include \"%s.moc\"' >> %s%s.cpp; else rm -f %s%s.cpp; exit $$ret; fi" % (base, rulef.build, base, rulef.build, base) )
+
+			rulef.insertTarget(rulef.build + base + ".cpp",
+							   [sourcedir + base + ".ui", rulef.build + base + ".h"],
+							   rules)
+
+			rulef.insertTarget(rulef.build + base + ".h", [sourcedir + base + ".ui"],
+							   ["@echo 'creating %s.h'" % (rulef.build + base),
+								"@$(UIC) -o $@ $?"])
+			
+			rulef.insertTarget(rulef.build + base + program.objext,
+							   [rulef.build + base + ".h", rulef.build + base + ".moc"])
+
+			rulef.add_define("UNSERMAKE_UIFILES", base)
+			program.cleanfiles.extend([base + ".h", base + ".cpp"])
+			
+		program.handle_source(base, ".cpp")
+
+	def create_source(self, program, base, ext):
+		value = base + "=" + base + ".h=" + base + ".cpp"
+		if not value in program.mfile.definition("METASOURCES"):
+			program.mfile.add_define("METASOURCES", value)
+
+handlerbase.register_handler(DesignerHandler())

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+url=`path_to_network_url "$1"`
+if [[ $url == "" ]]
+then
+    exit 1
+fi
+
+ip=`lnc_url_to_ip "$url"`
+if [[ $ip == "" ]]
+then
+    exit 1
+fi
+    
+krdc $ip

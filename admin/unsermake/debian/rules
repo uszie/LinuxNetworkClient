@@ -1,0 +1,123 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+MAKE=make -f debian/Makefile
+
+DB2MAN=/usr/share/sgml/docbook/stylesheet/xsl/nwalsh/manpages/docbook.xsl
+XP=xsltproc -''-nonet
+
+unsermake.1: debian/unsermake.xml
+	$(XP) $(DB2MAN) $<
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	# Add here commands to configure the package.
+	if test ! -f patch-stamp; then \
+		for patch in $(CURDIR)/debian/patches/*.diff ;\
+		do \
+			echo APPLYING PATCH\: $${patch##*/};\
+			patch < $$patch ;\
+		done ;\
+		touch patch-stamp ;\
+	fi
+
+	touch configure-stamp
+
+
+build: build-stamp
+
+build-stamp: configure-stamp unsermake.1
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE)
+	#/usr/bin/docbook-to-man debian/unsermake.sgml > unsermake.1
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+	# Add here commands to clean up after the build process.
+
+	# Remove Debian specific patches
+	if test -f patch-stamp; then \
+		for patch in $(CURDIR)/debian/patches/*.diff ;\
+		do \
+			echo REMOVING PATCH\: $${patch##*/};\
+			patch -R < $$patch ;\
+		done ;\
+		rm -f patch-stamp ;\
+	fi
+
+	rm -f unsermake.1
+
+	$(MAKE) clean DESTDIR=$(CURDIR)/debian/unsermake
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	# Add here commands to install the package into debian/unsermake.
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/unsermake
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs 
+	dh_installdocs
+	dh_installexamples
+#	dh_install
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+	dh_python
+#	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
+# We have nothing to do by default.
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

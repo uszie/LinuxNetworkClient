@@ -1,0 +1,32 @@
+#MIN_CONFIG(3.0.0)
+
+AM_INIT_AUTOMAKE(kautonetconfig, 0.1)
+AC_C_BIGENDIAN
+AC_CHECK_KDEMAXPATHLEN
+
+rm -f ../../.flags
+echo have_kde		= ${have_kde}		>  ../../.flags
+echo KDE_INCLUDES	= ${KDE_INCLUDES}	>> ../../.flags
+echo KDE_LDFLAGS	= ${KDE_LDFLAGS}	>> ../../.flags
+echo KIO_LIBS		= ${LIB_KIO}		>> ../../.flags
+echo have_qt		= ${have_qt}		>> ../../.flags
+echo QT_INCLUDES	= $QT_INCLUDES		>> ../../.flags
+echo QT_LDFLAGS		= $QT_LDFLAGS		>> ../../.flags
+echo QT_LIBS		= ${LIB_QT}		>> ../../.flags
+echo have_x		= ${have_x}		>> ../../.flags
+echo X_INCLUDES		= ${X_INCLUDES}		>> ../../.flags
+echo X_LDFLAGS		= ${X_LDFLAGS}		>> ../../.flags
+echo X_LIBS		= ${LIB_X11}		>> ../../.flags
+
+#echo have_kde           = ${have_kde}           >  ./.flags
+#echo KDE_INCLUDES       = ${KDE_INCLUDES}       >> ${top_srcdir}/.flags
+#echo KDE_LDFLAGS        = ${KDE_LDFLAGS}        >> ${top_srcdir}/.flags
+#echo KIO_LIBS           = ${LIB_KIO}            >> ${top_srcdir}/.flags
+#echo have_qt            = ${have_qt}            >> ${top_srcdir}/.flags
+#echo QT_INCLUDES        = $QT_INCLUDES          >> ${top_srcdir}/.flags
+#echo QT_LDFLAGS         = $QT_LDFLAGS           >> ${top_srcdir}/.flags
+#echo QT_LIBS            = ${LIB_QT}             >> ${top_srcdir}/.flags
+#echo have_x             = ${have_x}             >> ${top_srcdir}/.flags
+#echo X_INCLUDES         = ${X_INCLUDES}         >> ${top_srcdir}/.flags
+#echo X_LDFLAGS          = ${X_LDFLAGS}          >> ${top_srcdir}/.flags
+#echo X_LIBS             = ${LIB_X11}            >> ${top_srcdir}/.flags

@@ -1,0 +1,841 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>KNetworkClientConfigUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>KNetworkClientConfigUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>400</width>
+            <height>428</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>2</hsizetype>
+            <vsizetype>2</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>0</width>
+            <height>0</height>
+        </size>
+    </property>
+    <property name="maximumSize">
+        <size>
+            <width>32767</width>
+            <height>32767</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>KDE Networkclient Config</string>
+    </property>
+    <property name="layoutMargin" stdset="0">
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Global</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <spacer row="3" column="0">
+                        <property name="name">
+                            <cstring>GlobalSpacer</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>61</width>
+                                <height>16</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QButtonGroup" row="1" column="0">
+                        <property name="name">
+                            <cstring>DebugGroup</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Debug settings</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="KComboBox" row="0" column="1">
+                                <item>
+                                    <property name="text">
+                                        <string>Errors Only</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Informative</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Debug</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>LLkComboBox</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>140</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Defines the verbosity of the networkclient.
+Debug will flood the log file.</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="0" column="0">
+                                <property name="name">
+                                    <cstring>LLTextLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Log Level:</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Defines the verbosity of the networkclient.
+Debug will flood the log file.</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>EDMTextLabel</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Enable debug mode:</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>If you enable this option, then networkclient and the LNC library will try to cut down on thread usage, to make debuging easier.</string>
+                                </property>
+                            </widget>
+                            <widget class="KComboBox" row="1" column="1">
+                                <item>
+                                    <property name="text">
+                                        <string>No</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Yes</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>EDMComboBox</cstring>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>If you enable this option, then networkclient and the LNC library will try to cut down on thread usage, to make debuging easier.</string>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <widget class="QButtonGroup" row="2" column="0">
+                        <property name="name">
+                            <cstring>AuthentificationGroup</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Authorization settings</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="KLineEdit" row="1" column="1">
+                                <property name="name">
+                                    <cstring>DULineEdit</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>140</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Default username to try when a service requires a username/password.</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>DUTextLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Default Username:</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Default username to try when a service requires a username/password.</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>DPTextLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Default password:</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Default password to try when a service requires a username/password.</string>
+                                </property>
+                            </widget>
+                            <widget class="KLineEdit" row="2" column="1">
+                                <property name="name">
+                                    <cstring>DPLineEdit</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>140</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Default password to try when a service requires a username/password.</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="3" column="0" rowspan="1" colspan="2">
+                                <property name="name">
+                                    <cstring>DPWCheckBox</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Disable password lookup</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>This prevents the program from looking up a username/password combo when it needs one.
+Instead it wil popup a authorization dialog.</string>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                    <widget class="QButtonGroup" row="0" column="0">
+                        <property name="name">
+                            <cstring>GlobalGroup</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="title">
+                            <string>Network settings</string>
+                        </property>
+                        <property name="layoutMargin" stdset="0">
+                        </property>
+                        <property name="layoutSpacing" stdset="0">
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <property name="margin">
+                                <number>11</number>
+                            </property>
+                            <property name="spacing">
+                                <number>6</number>
+                            </property>
+                            <widget class="KIntSpinBox" row="1" column="1">
+                                <property name="name">
+                                    <cstring>BUISpinBox</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>140</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="suffix">
+                                    <string> minutes</string>
+                                </property>
+                                <property name="maxValue">
+                                    <number>1440</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>1</number>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>The amount of time the program waits before it updates the browselist tree.</string>
+                                </property>
+                            </widget>
+                            <widget class="KIntSpinBox" row="0" column="1">
+                                <property name="name">
+                                    <cstring>UISpinBox</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>140</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="suffix">
+                                    <string> seconds</string>
+                                </property>
+                                <property name="maxValue">
+                                    <number>600</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>1</number>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>The amount of time the program waits, before it unmounts an inactive mount.</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="0" column="0">
+                                <property name="name">
+                                    <cstring>UITextLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Umount Interval:</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>The amount of time the program waits, before it unmounts an inactive mount.</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>BUITextLabel</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>3</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Browselist update interval:</string>
+                                </property>
+                                <property name="scaledContents">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="alignment">
+                                    <set>AlignVCenter</set>
+                                </property>
+                                <property name="indent">
+                                    <number>-1</number>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>The amount of time the program waits before it updates the browselist tree.</string>
+                                </property>
+                            </widget>
+                            <widget class="KLineEdit" row="2" column="1">
+                                <property name="name">
+                                    <cstring>PNLineEdit</cstring>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="4" column="0">
+                                <property name="name">
+                                    <cstring>UBCheckBox</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Use broadcast:</string>
+                                </property>
+                                <property name="accel">
+                                    <string></string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>PNTextLabel</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Network range to scan:</string>
+                                </property>
+                            </widget>
+                            <widget class="KSqueezedTextLabel" row="3" column="0">
+                                <property name="name">
+                                    <cstring>IATextLabel</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Network addresses to ignore:</string>
+                                </property>
+                            </widget>
+                            <widget class="KLineEdit" row="3" column="1">
+                                <property name="name">
+                                    <cstring>IALineEdit</cstring>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Enabled &amp;Applications</string>
+                </attribute>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QButtonGroup">
+                        <property name="name">
+                            <cstring>AppGroup</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="title">
+                            <string>Network enabled applications</string>
+                        </property>
+                        <property name="layoutMargin" stdset="0">
+                        </property>
+                        <property name="layoutSpacing" stdset="0">
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Here you can add applications and enable the systemcalls which will trigger a authorization dialog when needed.
+If a program isn't listed here, the program will decide if it should enable authorization popups (if it's a daemon process like cron, it wil not).</string>
+                        </property>
+                        <grid>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <property name="margin">
+                                <number>11</number>
+                            </property>
+                            <property name="spacing">
+                                <number>6</number>
+                            </property>
+                            <widget class="KPushButton" row="0" column="2">
+                                <property name="name">
+                                    <cstring>AddPushButton</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Add</string>
+                                </property>
+                            </widget>
+                            <widget class="KListView" row="0" column="0" rowspan="4" colspan="1">
+                                <column>
+                                    <property name="text">
+                                        <string>Application</string>
+                                    </property>
+                                    <property name="clickable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizable">
+                                        <bool>true</bool>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Arguments</string>
+                                    </property>
+                                    <property name="clickable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizable">
+                                        <bool>true</bool>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Disabled</string>
+                                    </property>
+                                    <property name="clickable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizable">
+                                        <bool>true</bool>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Fake syscall</string>
+                                    </property>
+                                    <property name="clickable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizable">
+                                        <bool>true</bool>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Opendir</string>
+                                    </property>
+                                    <property name="clickable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizable">
+                                        <bool>true</bool>
+                                    </property>
+                                </column>
+                                <column>
+                                    <property name="text">
+                                        <string>Stat</string>
+                                    </property>
+                                    <property name="clickable">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="resizable">
+                                        <bool>true</bool>
+                                    </property>
+                                </column>
+                                <property name="name">
+                                    <cstring>AppListView</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>true</bool>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>7</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="selectionMode" stdset="0">
+                                    <enum>Single</enum>
+                                </property>
+                            </widget>
+                            <widget class="KPushButton" row="2" column="2">
+                                <property name="name">
+                                    <cstring>OptionsPushButton</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Options</string>
+                                </property>
+                            </widget>
+                            <spacer row="3" column="2">
+                                <property name="name">
+                                    <cstring>AppSpacer</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Vertical</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>16</width>
+                                        <height>61</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                            <widget class="KPushButton" row="1" column="2">
+                                <property name="name">
+                                    <cstring>RemovePushButton</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>5</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Remove</string>
+                                </property>
+                            </widget>
+                        </grid>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Plugins</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="KActionSelector" row="0" column="0">
+                        <property name="name">
+                            <cstring>PActionSelector</cstring>
+                        </property>
+                        <property name="availableLabel">
+                            <string>Enabled</string>
+                        </property>
+                        <property name="selectedLabel">
+                            <string>Disabled</string>
+                        </property>
+                        <property name="buttonIconSize">
+                            <enum>SmallIcon</enum>
+                        </property>
+                        <property name="availableInsertionPolicy">
+                            <enum>Sorted</enum>
+                        </property>
+                        <property name="selectedInsertionPolicy">
+                            <enum>Sorted</enum>
+                        </property>
+                        <property name="showUpDownButtons">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>AddPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KNetworkClientConfigUI</receiver>
+        <slot>appBrowse()</slot>
+    </connection>
+    <connection>
+        <sender>RemovePushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KNetworkClientConfigUI</receiver>
+        <slot>delListViewEntry()</slot>
+    </connection>
+    <connection>
+        <sender>OptionsPushButton</sender>
+        <signal>clicked()</signal>
+        <receiver>KNetworkClientConfigUI</receiver>
+        <slot>optionsDialog()</slot>
+    </connection>
+    <connection>
+        <sender>AppListView</sender>
+        <signal>selectionChanged()</signal>
+        <receiver>KNetworkClientConfigUI</receiver>
+        <slot>toggleOptionsButton()</slot>
+    </connection>
+    <connection>
+        <sender>AppListView</sender>
+        <signal>doubleClicked(QListViewItem*)</signal>
+        <receiver>KNetworkClientConfigUI</receiver>
+        <slot>optionsDialog()</slot>
+    </connection>
+    <connection>
+        <sender>AppListView</sender>
+        <signal>selectionChanged()</signal>
+        <receiver>KNetworkClientConfigUI</receiver>
+        <slot>toggleRemoveButton()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">kfiledialog.h</include>
+    <include location="local" impldecl="in implementation">knetworkclientconfigui.ui.h</include>
+</includes>
+<slots>
+    <slot>appBrowse()</slot>
+    <slot>addListViewEntry( const char * file )</slot>
+    <slot>delListViewEntry()</slot>
+    <slot>optionsDialog()</slot>
+    <slot>toggleOptionsButton()</slot>
+    <slot>toggleRemoveButton()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kcombobox.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>kcombobox.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>ksqueezedtextlabel.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kactionselector.h</includehint>
+</includehints>
+</UI>

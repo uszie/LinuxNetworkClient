@@ -1,0 +1,1 @@
+/usr/lib/LNC/lib_gui_plugin_kde4.so

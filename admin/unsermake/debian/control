@@ -1,0 +1,18 @@
+Source: unsermake
+Section: devel
+Priority: optional
+Maintainer: Jonathan Riddell <jr@jriddell.org>
+Build-Depends: debhelper (>= 4.1.65), docbook-xsl, xsltproc
+Standards-Version: 3.6.1
+
+Package: unsermake
+Architecture: all
+Depends: ${python:Depends}
+Recommends: automake
+Description: A tool for generating Makefiles, a replacement for automake
+ Unsermake replaces automake and is used by KDE.
+ .
+ Improvements over automake include faster parallel compiles and cleaner
+ output messages.
+
+

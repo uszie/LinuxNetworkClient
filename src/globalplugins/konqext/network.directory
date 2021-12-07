@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Service
+Icon=/usr/share/apps/networkclient/network.png
+Actions=confnet;mapnetworkdrive;
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=Network Actions
+Sorting=2
+Timestamp=                   
+
+[Dolphin]
+Sorting=2
+Timestamp=                   
+
+[Desktop Action mapnetworkdrive]
+Name=Map network drive
+Name[nl]=Koppel netwerk schijf
+Icon=/usr/share/apps/networkclient/network.png
+Exec=/bin/bash -c "kdesu --ignorebutton -d -c "kmapdrive""
+
+[Desktop Action confnet]
+Name=Configure network client
+Name[nl]=Configureer netwerk client
+Icon=/usr/share/apps/networkclient/network.png
+Exec=LD_PRELOAD=libelektra.so kcmshell knetworkclientconfig
